@@ -1,0 +1,49 @@
+name: Bug report
+description: Something in neoloopy isn't working as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve neoloopy! Please **don't** include private
+        details (your email, payment info, or vault contents). For billing or
+        account issues, email hello@neoloopy.com instead.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+  - type: input
+    id: version
+    attributes:
+      label: neoloopy version
+      description: From the app's ⓘ About dialog (e.g. 1.0.0).
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else?
+      description: Screenshots or notes. Please redact anything private.

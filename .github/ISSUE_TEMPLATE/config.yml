@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Billing, account & sync help
+    url: mailto:hello@neoloopy.com
+    about: Anything involving your email, payment, or account — please email so it stays private.
+  - name: Report a security vulnerability
+    url: https://github.com/frozenabe/neoloopy-downloads/security/advisories/new
+    about: Please report security issues privately, never as a public issue.

@@ -1,0 +1,16 @@
+name: Feature request / question
+description: Suggest an idea, or ask how to do something in neoloopy.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The problem or workflow behind the request — not just the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea or question
+      description: How you imagine it working, or what you'd like to know.
