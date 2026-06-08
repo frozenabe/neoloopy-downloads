@@ -5,11 +5,11 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.3.0</title>
-      <sparkle:version>13</sparkle:version>
-      <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
-      <pubDate>Mon, 08 Jun 2026 17:17:28 -0000</pubDate>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v1.3.0/neoloopy-macos.zip" sparkle:edSignature="e/j+zMKG0kddI1sJLcbvsdLdDkWFTVY9D6tSm1sDMkmtx9VR4JL7CngHHymV+eY2PMac0L5pmvCpg+1tq2uADA==" sparkle:os="macos" length="24655384" type="application/octet-stream"/>
+      <title>Version 1.3.1</title>
+      <sparkle:version>14</sparkle:version>
+      <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
+      <pubDate>Mon, 08 Jun 2026 20:05:20 -0000</pubDate>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v1.3.1/neoloopy-macos.zip" sparkle:edSignature="ZZ+vW0VTqwonzXUwfRPc3nT42ds5N/7rvb2DGmZOo+2laoVTtkyWVcdnKVtVAzb3R5UhwUac5BH8WCNdXzXQCQ==" sparkle:os="macos" length="24644802" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 1.2.0</title>
