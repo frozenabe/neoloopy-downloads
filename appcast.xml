@@ -5,17 +5,17 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
+      <title>Version 3.2.1</title>
+      <sparkle:version>52</sparkle:version>
+      <sparkle:shortVersionString>3.2.1</sparkle:shortVersionString>
+      <pubDate>Thu, 23 Jul 2026 00:05:43 -0000</pubDate>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.2.1/neoloopy-macos.zip" sparkle:edSignature="nGcMyzzFAtfya6sBI7m9cs6l5rQFGR14ESFPdRcK8U+AdAZ4pVfzx/c9iNfaG7GgvSg05pSc7Z2SstExkhHRAA==" sparkle:os="macos" length="35166755" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Version 3.2.0</title>
       <sparkle:shortVersionString>3.2.0</sparkle:shortVersionString>
       <pubDate>Wed, 22 Jul 2026 12:18:34 -0000</pubDate>
       <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.2.0/neoloopy-setup.exe" sparkle:dsaSignature="MEYCIQCa58UZoljCejp1pSrxd99AR1ctEe48zciPbDgQgjgZdQIhANL77MVHAOs53wv69yoni4/aaaWTBQf/FRePg9ArZ8BI" sparkle:os="windows" sparkle:version="3.2.0" length="14962081" type="application/octet-stream"/>
-    </item>
-    <item>
-      <title>Version 3.2.0</title>
-      <sparkle:version>51</sparkle:version>
-      <sparkle:shortVersionString>3.2.0</sparkle:shortVersionString>
-      <pubDate>Wed, 22 Jul 2026 12:06:47 -0000</pubDate>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.2.0/neoloopy-macos.zip" sparkle:edSignature="UtMJnmHSgtsFts+mLP49+DvGYHmTyUiR6WGTMpa2S+1gJhjRhccucefeZoF1hiCMk/upsZnuUTtt2wCL9gODDA==" sparkle:os="macos" length="35099704" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
