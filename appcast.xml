@@ -7,8 +7,8 @@
     <item>
       <title>Version 3.5.0</title>
       <sparkle:shortVersionString>3.5.0</sparkle:shortVersionString>
-      <pubDate>Thu, 03 Sep 2026 17:27:13 -0000</pubDate>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.5.0/neoloopy-setup.exe" sparkle:dsaSignature="MEYCIQCQgT5CBHKgwn2/EfmrE7uQ8Q7cj25oUF3/XuIKBwDh5gIhAKsXObDEoM52Jq8oMTO3uWiyp0tDtLjZQWM1ek630/ir" sparkle:os="windows" sparkle:version="3.5.0" length="15934988" type="application/octet-stream"/>
+      <pubDate>Thu, 03 Sep 2026 17:52:13 -0000</pubDate>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.5.0/neoloopy-setup.exe" sparkle:dsaSignature="MEUCID5rGN+yGvQ23c/VWv6on2DhKeWNoYp+SB2QbYP8TTnqAiEAjDfulT5HnrtUUnD75uvKqSkXlFrpGdb3wvvDTCw/L8I=" sparkle:os="windows" sparkle:version="3.5.0" length="15934651" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 3.5.0</title>
