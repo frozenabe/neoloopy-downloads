@@ -6,16 +6,16 @@
     <language>en</language>
     <item>
       <title>Version 3.5.0</title>
+      <sparkle:shortVersionString>3.5.0</sparkle:shortVersionString>
+      <pubDate>Thu, 03 Sep 2026 17:27:13 -0000</pubDate>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.5.0/neoloopy-setup.exe" sparkle:dsaSignature="MEYCIQCQgT5CBHKgwn2/EfmrE7uQ8Q7cj25oUF3/XuIKBwDh5gIhAKsXObDEoM52Jq8oMTO3uWiyp0tDtLjZQWM1ek630/ir" sparkle:os="windows" sparkle:version="3.5.0" length="15934988" type="application/octet-stream"/>
+    </item>
+    <item>
+      <title>Version 3.5.0</title>
       <sparkle:version>56</sparkle:version>
       <sparkle:shortVersionString>3.5.0</sparkle:shortVersionString>
       <pubDate>Thu, 03 Sep 2026 17:18:41 -0000</pubDate>
       <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.5.0/neoloopy-macos.zip" sparkle:edSignature="sYPvFwzMcmJ4nYIiiVEqJNej41O8p7/BmNVCB8CIpRvwlE6en4oHwcrNTQW5hOdv/W7fw7ADcz75XFJ7Mrz0Cg==" sparkle:os="macos" length="39219271" type="application/octet-stream"/>
-    </item>
-    <item>
-      <title>Version 3.2.1</title>
-      <sparkle:shortVersionString>3.2.1</sparkle:shortVersionString>
-      <pubDate>Thu, 23 Jul 2026 01:15:25 -0000</pubDate>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.2.1/neoloopy-setup.exe" sparkle:dsaSignature="MEQCIBOmIq/mt4PQHlC1koKKQK3kiMkMUUeYZEcTdLmz7nAmAiAifYnqtoKg57no6Ab9qOudKAU0ccopwN1dENRVjyAzow==" sparkle:os="windows" sparkle:version="3.2.1" length="14985286" type="application/octet-stream"/>
     </item>
   </channel>
 </rss>
