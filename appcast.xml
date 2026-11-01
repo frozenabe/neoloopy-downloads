@@ -5,59 +5,26 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.10.0</title>
-      <sparkle:version>62</sparkle:version>
-      <sparkle:shortVersionString>3.10.0</sparkle:shortVersionString>
-      <pubDate>Sun, 01 Nov 2026 16:02:18 -0000</pubDate>
-      <description><![CDATA[<h1>neoloopy 3.10.0 (build 62)</h1>
+      <title>Version 3.10.1</title>
+      <sparkle:version>63</sparkle:version>
+      <sparkle:shortVersionString>3.10.1</sparkle:shortVersionString>
+      <pubDate>Sun, 01 Nov 2026 16:11:24 -0000</pubDate>
+      <description><![CDATA[<h1>neoloopy 3.10.1 (build 63)</h1>
+<p>A small follow-up to 3.10.0 from a click-through of the shipped build. Everything in the [3.10.0 notes](3.10.0.md) still applies, including the one-time <code>neoloopy index build</code> after upgrading from 3.9.1.</p>
 <h2>Scope</h2>
 <ul>
-<li><strong>macOS.</strong> This release ships the macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server. Windows, Linux and Android builds are not part of this release, and the iOS app is not part of this cut.</li>
-<li>Apple silicon is the native slice of the macOS app. The app is universal; on an Intel Mac the x86_64 slice runs.</li>
+<li><strong>macOS.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server. Windows, Linux and Android builds are not part of this release, and the iOS app is not part of this cut.</li>
 </ul>
 <h2>In the app</h2>
 <ul>
-<li><strong>See where a Graph node came from.</strong> The right pane of a Graph Model shows a node's provenance: what produced it, its identifier and kind there, what that origin said, when it was captured, and the documents behind it with their section, quote and link. A node without a record says "No source recorded."</li>
-<li><strong>Annotate any node in place.</strong> The pane's Notes field writes to the node's own section of the graph note, idea and reference nodes alike, with no modal. What a source said and what you think stay separate: a note never overwrites provenance. A note that cannot be saved stays in the field, or goes to the clipboard if the node was removed meanwhile.</li>
-<li><strong>Focus fills the canvas.</strong> Focus, Show everything and every other canvas start spread the working set to the viewport the way Spread out does on a causal-loop diagram, keep the focused node centred, and reframe on resize until you take the camera. <code>F</code> frames the whole set again.</li>
-<li><strong>A damaged model explains itself.</strong> The Models list keeps a model whose note cannot be read as a row that names the notes to repair, instead of hiding it.</li>
-<li><strong>Impact Health names what it could not search.</strong> A health check on a link edit skips a damaged sibling model, lists it under corpus not searched with the path and reason, and still reviews the model you are editing.</li>
+<li><strong>The structure board shows every facet chip.</strong> The Types and Groups chip pane of a Graph Model's structure board now sizes to the window instead of a fixed height, so a tall window shows every row whole and a short one still scrolls. Before, a window of ordinary height cut the last Groups row through the middle of the chips.</li>
+<li><strong>Check for updates moved to the More menu.</strong> It sits next to Install <code>neoloopy</code> CLI with the other app-level actions, instead of under the vault path chevron with the folder actions.</li>
 </ul>
-<h2>Upgrading from 3.9.1</h2>
+<h2>Updating</h2>
 <ul>
-<li><strong>Rebuild the search index before the first read.</strong> Run <code>neoloopy index build</code>: the analyzer identity is now <code>+lexical-identifiers.v2+compat-fold.v1</code>, and an older index reports <code>index_stale</code> until rebuilt.</li>
-<li><strong>Keep document gates open while rebuilding.</strong> For a vault serving ingested documents, use <code>LOOPY_PETRI=1 LOOPY_INGEST=1</code> on the build and subsequent reads; a closed-gate rebuild indexes stubs and reports any shrink.</li>
-<li><strong>Rebuild older local vectors explicitly.</strong> With <code>LOOPY_EMBED_LOCAL_MODEL</code> configured, run <code>neoloopy index build --provider local</code> once to record the token window, prefixes and long-text policy; later rebuilds reuse unchanged vectors with matching identity.</li>
-<li><strong>Refresh older parses when wanted.</strong> <code>ingest-status</code> reports outdated or unknown parser identities; <code>ingest-reparse --dry-run</code> previews an explicit refresh, and <code>ingest-reparse</code> publishes it through the existing pipeline, deferring unavailable parsers with their reasons.</li>
-</ul>
-<h2>Search and citations</h2>
-<ul>
-<li><strong>Search Graph records.</strong> <code>recall</code> and <code>retrieve</code> search node provenance, source quotes and notes; graph hits carry a node anchor and <code>lines: null</code>.</li>
-<li><strong>Read and walk Graph Models.</strong> <code>graph-list</code>, <code>graph-query</code>, <code>graph-edges</code> and <code>graph-node</code> provide vocabulary, filters, negation, facets, batches and bounded paths; Graph authoring remains in the app.</li>
-<li><strong>Read the cited passage.</strong> <code>passage &lt;unit_id&gt;</code> returns indexed text, context and an outline with explicit cuts; it requires an existing fresh index and never builds one.</li>
-<li><strong>Retrieve several sections.</strong> <code>--sections 1..10</code> defaults to 3, with separately citable passage ids; reranking selects passages before grouping them into document rows.</li>
-<li><strong>Scope before ranking.</strong> <code>--within</code>, <code>--folder</code>, <code>--kind</code>, <code>--model</code>, <code>--match</code> and <code>--not-match</code> constrain candidate selection before lexical, dense and rerank stages; unknown scopes and literal misses are named.</li>
-<li><strong>Continue after a small budget.</strong> <code>ranked.next_offset</code> advances by hits actually emitted, and an empty page keeps its offset until the budget is raised; <code>displaced</code> and omission counts explain graph spreading and trimming.</li>
-<li><strong>Find identifiers.</strong> Section numbers and connector codes have separate fields; identifier headings use the leaf section, while word headings retain ancestor context.</li>
-<li><strong>Follow a finding.</strong> <code>retrieve --expand</code> adds live graph neighbours; <code>reason-with</code> and <code>retrieve.reason_with</code> point to authored causal, process or game connections and exact available reads without running a simulation or diagnosis.</li>
-</ul>
-<h2>Dense retrieval and reranking</h2>
-<ul>
-<li><strong>Configure dense retrieval.</strong> Use <code>LOOPY_EMBED_LOCAL_MODEL</code> locally, or explicitly configure <code>LOOPY_EMBED_URL</code>, <code>LOOPY_EMBED_MODEL</code> and optional <code>LOOPY_EMBED_KEY</code>; <code>--ranking</code> and <code>--provider</code> choose the first stage.</li>
-<li><strong>Choose local embedding coverage.</strong> <code>LOOPY_EMBED_LONG_TEXT=head|mean</code> keeps <code>head</code> as default; <code>mean</code> reads overlapping windows, and policy changes require an explicit vector rebuild.</li>
-<li><strong>Configure reranking separately.</strong> Use <code>LOOPY_RERANK_LOCAL_MODEL</code>, or explicitly configure <code>LOOPY_RERANK_URL</code>, <code>LOOPY_RERANK_MODEL</code> and optional <code>LOOPY_RERANK_KEY</code>; <code>--rerank auto|local|remote|none</code> and <code>--rerank-top</code> select the stage and pair budget.</li>
-<li><strong>Read long passages.</strong> <code>LOOPY_RERANK_LONG_TEXT=first_and_best</code> blends first and best windows by default; <code>head</code> and <code>max_window</code> remain selectable, and identifier mode uses head scoring with tier-first selection and a hard two-text cap per document.</li>
-<li><strong>Check what ran.</strong> Replies expose lexical, dense and rerank stages, coverage and degradation; local failure never silently sends text to a remote provider.</li>
-<li><strong>Defaults remain unchanged by mock labels.</strong> No embedder or reranker model is selected for the host, and the embedding policy stays <code>head</code>; illustrative evaluations report <code>verdict: withheld</code> until expert labels support adoption.</li>
-</ul>
-<h2>Read reliability and MCP</h2>
-<ul>
-<li><strong>A damaged note costs its own model.</strong> Listings retain <code>unavailable</code>; healthy vault-wide reads continue with <code>corpus_not_searched</code> paths and reasons, while targeted damaged-model reads and whole-vault Engage evidence refuse.</li>
-<li><strong>Treat retrieved text as data.</strong> The shared RAG read set projects invisible characters and literal escape prefixes reversibly once on CLI and MCP; decode once to reconstruct source text, preserving notices and omission fields.</li>
-<li><strong>Send modern MCP metadata.</strong> Requests using revision <code>2026-07-28</code> require <code>_meta: {"protocolVersion":"2026-07-28","clientCapabilities":{}}</code>; supported legacy clients use <code>initialize</code>.</li>
-<li><strong>Correct invalid arguments.</strong> Known-tool argument mistakes return actionable <code>isError: true</code> results; unknown tools and malformed protocol requests remain protocol errors.</li>
+<li><strong>The update prompt shows the release notes.</strong> The appcast item now carries them, so Sparkle's prompt says what changed rather than only that something did. The 3.10.0 item was republished the same way.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.10.0/neoloopy-macos.zip" sparkle:edSignature="FnVwAU95GwxuJRkKIcDjtShQ8vwfhBiAkadjMTRBUXepKbZpQhzT8AGdZ/XBTZvhmuoaXz7Us/eIR3a/ytFfAQ==" sparkle:os="macos" length="102766219" type="application/octet-stream"/>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.10.1/neoloopy-macos.zip" sparkle:edSignature="e53kWstjltZ1n53bhevAOWg+xRoH7h2oRpFCZVcIhg/FG16D08MHVwADTlflOerjmUzFORmEMCXlI1M9anlkDw==" sparkle:os="macos" length="102761348" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 3.5.0</title>
