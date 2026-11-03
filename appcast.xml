@@ -5,22 +5,24 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.10.2</title>
-      <sparkle:version>64</sparkle:version>
-      <sparkle:shortVersionString>3.10.2</sparkle:shortVersionString>
-      <pubDate>Sun, 01 Nov 2026 22:54:55 -0000</pubDate>
-      <description><![CDATA[<h1>neoloopy 3.10.2 (build 64)</h1>
-<p>A second follow-up to 3.10.0, closing the two canvas gaps noted during the 3.10.1 click-through. Everything in the [3.10.0 notes](3.10.0.md) still applies, including the one-time <code>neoloopy index build</code> after upgrading from 3.9.1.</p>
+      <title>Version 3.11.0</title>
+      <sparkle:version>65</sparkle:version>
+      <sparkle:shortVersionString>3.11.0</sparkle:shortVersionString>
+      <pubDate>Tue, 03 Nov 2026 23:25:26 -0000</pubDate>
+      <description><![CDATA[<h1>neoloopy 3.11.0 (build 65)</h1>
+<p>Companion apps can now ask neoloopy who is signed in and prove it. Everything in the [3.10.0 notes](3.10.0.md) still applies, including the one-time <code>neoloopy index build</code> after upgrading from 3.9.1.</p>
 <h2>Scope</h2>
 <ul>
-<li><strong>macOS.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server. Windows, Linux and Android builds are not part of this release, and the iOS app is not part of this cut.</li>
+<li><strong>macOS.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server. The app change also lands on iOS with the next iOS submission; Windows, Linux and Android builds are not part of this release.</li>
 </ul>
-<h2>In the app</h2>
+<h2>For companion apps</h2>
 <ul>
-<li><strong>Relation labels keep clear of node bodies.</strong> On a dense Graph Model, a relation's type label sat at the exact middle of its curve even when another node's body was there, so the label was drawn under that node or straddled its rim. The label now slides along its own curve to the nearest clear spot, staying within the middle of the curve so it never reaches an arrowhead, and the midpoint control you tap to edit the relation docks where the label is. A label nothing obstructs sits exactly where it did before, and a label with no clear spot anywhere stays at the midpoint.</li>
-<li><strong>Finishing a note by clicking the canvas keeps the node selected.</strong> Typing a note in a node's right pane and clicking the empty canvas saved the note and also dropped the selection, so the pane closed on the node you were working on. The first click now only puts the keyboard down, and the note still saves on that blur. A second click on the empty canvas clears the selection as before, and clicking another node still saves the note and moves the selection to it.</li>
+<li><strong><code>neoloopy whoami</code>.</strong> A read-only command, also an MCP tool, that reports the signed-in neoloopy account: <code>signed_in</code>, <code>account_id</code>, <code>email</code>, <code>display_name</code>, <code>issued_at</code>, <code>expires_at</code> and a 30-day identity assertion signed by the neoloopy service (ES256 compact JWS). Signed out, or with no usable assertion, it answers <code>signed_in: false</code> with a reason of <code>missing</code>, <code>expired</code> or <code>invalid</code>, exit code 0 either way. <code>whoami --public-key</code> prints the JWK set to verify the assertion with, so an app beside neoloopy can record which account acted and check it offline without a sign-in of its own. <code>account_id</code> is the identity; <code>email</code> is present only once Supabase has confirmed the address, else null; <code>display_name</code> is the account's own profile text, a label and never an identifier. The MCP tool leaves the assertion out unless asked (<code>include-assertion</code>), so a token does not land in an agent's transcript by default.</li>
+<li><strong>The app keeps the assertion fresh.</strong> While signed in on the desktop app, the assertion is fetched at sign-in and on launch and stored, readable only by you, beside the quant entitlement token; it is removed at sign-out.</li>
+<li><strong>Dev key for CI and fixtures.</strong> A checked-in dev key pair, two fixture tokens and <code>dart run tool/identity_dev_sign.dart</code> mint test identities; <code>LOOPY_IDENTITY_TOKEN</code> and <code>LOOPY_IDENTITY_KEYS</code> point <code>whoami</code> at fixture files. Docs: "Identity for companion apps" in <code>docs/mcp.md</code>.</li>
+<li><strong><code>connect-claude --env NAME=VALUE</code>.</strong> Writes an <code>env</code> block on the MCP entry it creates, so <code>--vault &lt;dir&gt; --env LOOPY_PETRI=1 --env LOOPY_INGEST=1</code> serves an ingested vault to an agent without hand-editing the config.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.10.2/neoloopy-macos.zip" sparkle:edSignature="J71rGblMq5Zv1DHwq4lWM0ZgjgxNVbXELVSP/w6tGyYzsajW7cCT9VOKLhgacv4iIuJX/4eJ9GvhXhZWpO2nAw==" sparkle:os="macos" length="102772800" type="application/octet-stream"/>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.11.0/neoloopy-macos.zip" sparkle:edSignature="4WMOwnKb2FCrhLaM5kZOvsipz1YLYI67YT2YTk7WK7msANdLFte8rVRLUhwcP1ypzhMw3TeNeBvHNI93N7C1DA==" sparkle:os="macos" length="103491099" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 3.5.0</title>
