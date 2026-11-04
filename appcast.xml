@@ -5,24 +5,33 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.11.0</title>
-      <sparkle:version>65</sparkle:version>
-      <sparkle:shortVersionString>3.11.0</sparkle:shortVersionString>
-      <pubDate>Tue, 03 Nov 2026 23:25:26 -0000</pubDate>
-      <description><![CDATA[<h1>neoloopy 3.11.0 (build 65)</h1>
-<p>Companion apps can now ask neoloopy who is signed in and prove it. Everything in the [3.10.0 notes](3.10.0.md) still applies, including the one-time <code>neoloopy index build</code> after upgrading from 3.9.1.</p>
+      <title>Version 3.12.0</title>
+      <sparkle:version>66</sparkle:version>
+      <sparkle:shortVersionString>3.12.0</sparkle:shortVersionString>
+      <pubDate>Wed, 04 Nov 2026 20:46:35 -0000</pubDate>
+      <description><![CDATA[<h1>neoloopy 3.12.0 (build 66)</h1>
+<p>Companion apps can now send you straight to a model, the Android app is back, and creating a model no longer needs a name. Everything in the [3.11.0 notes](3.11.0.md) and the [3.10.0 notes](3.10.0.md) still applies.</p>
 <h2>Scope</h2>
 <ul>
-<li><strong>macOS.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server. The app change also lands on iOS with the next iOS submission; Windows, Linux and Android builds are not part of this release.</li>
+<li><strong>macOS and Android.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server, and the Android app as a direct <code>.apk</code>. The app changes reach iPhone and iPad with the next iOS submission. Windows and Linux builds stay at 3.5.0.</li>
+<li><strong>Android moves from 3.5.0 to 3.12.0 in one step</strong>, so everything released for the other platforms since 3.5.0 arrives with it. The new <code>.apk</code> is signed with the same key as 3.5.0 and installs over it.</li>
 </ul>
-<h2>For companion apps</h2>
+<h2>Open a note from another app (macOS)</h2>
 <ul>
-<li><strong><code>neoloopy whoami</code>.</strong> A read-only command, also an MCP tool, that reports the signed-in neoloopy account: <code>signed_in</code>, <code>account_id</code>, <code>email</code>, <code>display_name</code>, <code>issued_at</code>, <code>expires_at</code> and a 30-day identity assertion signed by the neoloopy service (ES256 compact JWS). Signed out, or with no usable assertion, it answers <code>signed_in: false</code> with a reason of <code>missing</code>, <code>expired</code> or <code>invalid</code>, exit code 0 either way. <code>whoami --public-key</code> prints the JWK set to verify the assertion with, so an app beside neoloopy can record which account acted and check it offline without a sign-in of its own. <code>account_id</code> is the identity; <code>email</code> is present only once Supabase has confirmed the address, else null; <code>display_name</code> is the account's own profile text, a label and never an identifier. The MCP tool leaves the assertion out unless asked (<code>include-assertion</code>), so a token does not land in an agent's transcript by default.</li>
-<li><strong>The app keeps the assertion fresh.</strong> While signed in on the desktop app, the assertion is fetched at sign-in and on launch and stored, readable only by you, beside the quant entitlement token; it is removed at sign-out.</li>
-<li><strong>Dev key for CI and fixtures.</strong> A checked-in dev key pair, two fixture tokens and <code>dart run tool/identity_dev_sign.dart</code> mint test identities; <code>LOOPY_IDENTITY_TOKEN</code> and <code>LOOPY_IDENTITY_KEYS</code> point <code>whoami</code> at fixture files. Docs: "Identity for companion apps" in <code>docs/mcp.md</code>.</li>
-<li><strong><code>connect-claude --env NAME=VALUE</code>.</strong> Writes an <code>env</code> block on the MCP entry it creates, so <code>--vault &lt;dir&gt; --env LOOPY_PETRI=1 --env LOOPY_INGEST=1</code> serves an ingested vault to an agent without hand-editing the config.</li>
+<li><strong><code>neoloopy://open</code> links.</strong> A link of the form <code>neoloopy://open?vault=&lt;folder&gt;&amp;note=&lt;path in the vault&gt;</code> opens that model in neoloopy: a Graph Model file, a model folder, or any note inside a model folder. Companion apps such as Bainso use it to land you on the model you are reviewing.</li>
+<li><strong>A link only navigates.</strong> It opens a model exactly as clicking it in the models list does. It never creates a vault and never opens anything outside the vault. A link to another vault always asks first, names the folder, and tells you the CLI and MCP server will use that vault too. A link that arrives while a model is open asks before closing it, and anything with unsaved work keeps its own save prompt. Malformed links show one short message and do nothing else.</li>
+<li>Details are in "Open a note from another app" in <code>docs/mcp.md</code>.</li>
+</ul>
+<h2>In the app</h2>
+<ul>
+<li><strong>Create works without a name.</strong> The New model dialog shows "Untitled model" in its name field, but pressing Create without typing a name used to close the dialog and create nothing. It now creates a model named "Untitled model", and a second one when that name is taken.</li>
+<li><strong>Escape closes the game scenario dialog again.</strong> After a Preview or Save that took more than a moment, Escape stopped closing the scenario dialog. It now works throughout.</li>
+</ul>
+<h2>CLI</h2>
+<ul>
+<li><strong><code>neoloopy --version</code> reports the app version</strong> (3.12.0), as do the usage banner, <code>schema</code> and the MCP server's <code>serverInfo</code>. It used to say 1.0.0.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.11.0/neoloopy-macos.zip" sparkle:edSignature="4WMOwnKb2FCrhLaM5kZOvsipz1YLYI67YT2YTk7WK7msANdLFte8rVRLUhwcP1ypzhMw3TeNeBvHNI93N7C1DA==" sparkle:os="macos" length="103491099" type="application/octet-stream"/>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.12.0/neoloopy-macos.zip" sparkle:edSignature="+zTWecCrfViMYvrsSQwe9Y+uroAWT58VSr5DSoyRM7yDHvtxH3BqIc8JkTg6apzOWCWaDiYMsGK53y9rQPA9BA==" sparkle:os="macos" length="103524713" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 3.5.0</title>
