@@ -5,33 +5,41 @@
     <description>Most recent neoloopy updates</description>
     <language>en</language>
     <item>
-      <title>Version 3.12.0</title>
-      <sparkle:version>66</sparkle:version>
-      <sparkle:shortVersionString>3.12.0</sparkle:shortVersionString>
-      <pubDate>Wed, 04 Nov 2026 20:46:35 -0000</pubDate>
-      <description><![CDATA[<h1>neoloopy 3.12.0 (build 66)</h1>
-<p>Companion apps can now send you straight to a model, the Android app is back, and creating a model no longer needs a name. Everything in the [3.11.0 notes](3.11.0.md) and the [3.10.0 notes](3.10.0.md) still applies.</p>
+      <title>Version 3.13.0</title>
+      <sparkle:version>67</sparkle:version>
+      <sparkle:shortVersionString>3.13.0</sparkle:shortVersionString>
+      <pubDate>Mon, 09 Nov 2026 04:01:00 -0000</pubDate>
+      <description><![CDATA[<h1>neoloopy 3.13.0 (build 67)</h1>
+<p>Quantitative modeling is free for everyone, Cloud is the one paid plan, organizations can license agent-based models, process authoring and document ingest, and any model moves between devices as a file. Everything in the [3.12.0 notes](3.12.0.md) still applies.</p>
 <h2>Scope</h2>
 <ul>
-<li><strong>macOS and Android.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server, and the Android app as a direct <code>.apk</code>. The app changes reach iPhone and iPad with the next iOS submission. Windows and Linux builds stay at 3.5.0.</li>
-<li><strong>Android moves from 3.5.0 to 3.12.0 in one step</strong>, so everything released for the other platforms since 3.5.0 arrives with it. The new <code>.apk</code> is signed with the same key as 3.5.0 and installs over it.</li>
+<li><strong>macOS, iOS and Android.</strong> The macOS app (DMG and Sparkle update) with the embedded <code>neoloopy</code> CLI and MCP server, the iOS app, and the Android app as a direct <code>.apk</code>. Windows and Linux builds stay at 3.5.0.</li>
+<li><strong>Processes (Petri nets) reach Android</strong> with this release; macOS and iOS already had them.</li>
 </ul>
-<h2>Open a note from another app (macOS)</h2>
+<h2>Free, Cloud and Commercial</h2>
 <ul>
-<li><strong><code>neoloopy://open</code> links.</strong> A link of the form <code>neoloopy://open?vault=&lt;folder&gt;&amp;note=&lt;path in the vault&gt;</code> opens that model in neoloopy: a Graph Model file, a model folder, or any note inside a model folder. Companion apps such as Bainso use it to land you on the model you are reviewing.</li>
-<li><strong>A link only navigates.</strong> It opens a model exactly as clicking it in the models list does. It never creates a vault and never opens anything outside the vault. A link to another vault always asks first, names the folder, and tells you the CLI and MCP server will use that vault too. A link that arrives while a model is open asks before closing it, and anything with unsaved work keeps its own save prompt. Malformed links show one short message and do nothing else.</li>
-<li>Details are in "Open a note from another app" in <code>docs/mcp.md</code>.</li>
+<li><strong>Quantitative modeling is free.</strong> Stock-and-flow equations, simulation, scenarios, calibration, optimization, sensitivity and loop dominance no longer need a subscription, in the app and in the <code>neoloopy</code> CLI and MCP server. Viable System Model diagnosis, including its measured checks, is free as well.</li>
+<li><strong>Cloud is the one paid plan, $5 a month:</strong> end-to-end encrypted sync across your devices with 1 GiB of storage, up to 20 hosted publications, and private access to them. It replaces Sync and Pro. Existing Sync, Plus and Pro subscriptions and complimentary grants keep working, and a Pro subscription counts as a Commercial seat until it lapses.</li>
+<li><strong>Free accounts host 3 publications.</strong> Publishing a model or a simulation no longer needs a subscription. Archived publications count toward hosted storage until they are cleared, and publishing is limited to 100 times per 30 days.</li>
+<li><strong>Commercial license for organizations.</strong> Agent-based models, editing process models and document ingest need a Commercial license: $300 per seat per year, minimum 3 seats, arranged by contact. It includes Cloud. Everything you already built stays viewable and replayable. Individuals, education, research, non-profits and organizations under 250 employees and US$10M revenue use neoloopy under the free license; the full text is on the app's Legal screen, which also shows the organization a seat is licensed to.</li>
+<li><strong>On iPhone and iPad</strong> the app shows your plan but sells nothing. Add Cloud from neoloopy on the web or desktop, then sign in on the phone.</li>
+</ul>
+<h2>Move a model between devices</h2>
+<ul>
+<li><strong>Export model… and Import.</strong> Any model exports to a single file from its menu and imports on another device, free and without an account. Importing a model that is already there asks whether to Replace it or Keep both. If an import fails, your previous version is kept under a name that says so. Agent-based model content is not included in model files. A model exported by a newer neoloopy asks you to update first.</li>
 </ul>
 <h2>In the app</h2>
 <ul>
-<li><strong>Create works without a name.</strong> The New model dialog shows "Untitled model" in its name field, but pressing Create without typing a name used to close the dialog and create nothing. It now creates a model named "Untitled model", and a second one when that name is taken.</li>
-<li><strong>Escape closes the game scenario dialog again.</strong> After a Preview or Save that took more than a moment, Escape stopped closing the scenario dialog. It now works throughout.</li>
+<li><strong>The models list loads fast again.</strong> Since the 2026-10-31 source checks the roster re-read the vault once per model; it now reads it once. On a 54-model, 1500-note vault the list went from about a second to well under a tenth of one.</li>
+<li><strong>Run a process with the canvas in view on a phone.</strong> A run strip sits on the canvas and Insights docks below it with a grip, instead of covering the canvas. The Insights panel grows while the keyboard is up.</li>
+<li><strong>Canvas fixes.</strong> An unmoved tap on a target no longer deselects it on release, and a canvas disposes its controller with its route. A failure while watching a model file stays contained to that model.</li>
+<li><strong>Cloud storage full</strong> is reported in Sync with your usage; the 1 GiB limit is enforced by the server.</li>
 </ul>
-<h2>CLI</h2>
+<h2>CLI and MCP server</h2>
 <ul>
-<li><strong><code>neoloopy --version</code> reports the app version</strong> (3.12.0), as do the usage banner, <code>schema</code> and the MCP server's <code>serverInfo</code>. It used to say 1.0.0.</li>
+<li>Quantitative verbs run without a token. Agent-based, process-writing and document-ingest verbs need the Commercial scope and are hidden without it; the read verbs stay available. <code>neoloopy --version</code> reports 3.13.0.</li>
 </ul>]]></description>
-      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.12.0/neoloopy-macos.zip" sparkle:edSignature="+zTWecCrfViMYvrsSQwe9Y+uroAWT58VSr5DSoyRM7yDHvtxH3BqIc8JkTg6apzOWCWaDiYMsGK53y9rQPA9BA==" sparkle:os="macos" length="103524713" type="application/octet-stream"/>
+      <enclosure url="https://github.com/frozenabe/neoloopy-downloads/releases/download/v3.13.0/neoloopy-macos.zip" sparkle:edSignature="hcS4BJyTK2NcjqIjmMYke03i9Dz4wA7SRnFyX62hrse4T1drhlgjVfMPiHSjWnNKPwzfKwoIAaKUn1fkM4HGCA==" sparkle:os="macos" length="103582576" type="application/octet-stream"/>
     </item>
     <item>
       <title>Version 3.5.0</title>
