@@ -8,7 +8,7 @@
       <title>Version 3.13.0</title>
       <sparkle:version>67</sparkle:version>
       <sparkle:shortVersionString>3.13.0</sparkle:shortVersionString>
-      <pubDate>Mon, 09 Nov 2026 04:01:00 -0000</pubDate>
+      <pubDate>Mon, 09 Nov 2026 05:30:28 -0000</pubDate>
       <description><![CDATA[<h1>neoloopy 3.13.0 (build 67)</h1>
 <p>Quantitative modeling is free for everyone, Cloud is the one paid plan, organizations can license agent-based models, process authoring and document ingest, and any model moves between devices as a file. Everything in the [3.12.0 notes](3.12.0.md) still applies.</p>
 <h2>Scope</h2>
@@ -21,7 +21,7 @@
 <li><strong>Quantitative modeling is free.</strong> Stock-and-flow equations, simulation, scenarios, calibration, optimization, sensitivity and loop dominance no longer need a subscription, in the app and in the <code>neoloopy</code> CLI and MCP server. Viable System Model diagnosis, including its measured checks, is free as well.</li>
 <li><strong>Cloud is the one paid plan, $5 a month:</strong> end-to-end encrypted sync across your devices with 1 GiB of storage, up to 20 hosted publications, and private access to them. It replaces Sync and Pro. Existing Sync, Plus and Pro subscriptions and complimentary grants keep working, and a Pro subscription counts as a Commercial seat until it lapses.</li>
 <li><strong>Free accounts host 3 publications.</strong> Publishing a model or a simulation no longer needs a subscription. Archived publications count toward hosted storage until they are cleared, and publishing is limited to 100 times per 30 days.</li>
-<li><strong>Commercial license for organizations.</strong> Agent-based models, editing process models and document ingest need a Commercial license: $300 per seat per year, minimum 3 seats, arranged by contact. It includes Cloud. Everything you already built stays viewable and replayable. Individuals, education, research, non-profits and organizations under 250 employees and US$10M revenue use neoloopy under the free license; the full text is on the app's Legal screen, which also shows the organization a seat is licensed to.</li>
+<li><strong>Commercial license for organizations.</strong> Agent-based models, editing process models and document ingest need a Commercial license: licensed per seat with a minimum of 3 seats, pricing on request and arranged by contact. It includes Cloud. Everything you already built stays viewable and replayable. Individuals, education, research, non-profits and organizations under 250 employees and US$10M revenue use neoloopy under the free license; the full text is on the app's Legal screen, which also shows the organization a seat is licensed to.</li>
 <li><strong>On iPhone and iPad</strong> the app shows your plan but sells nothing. Add Cloud from neoloopy on the web or desktop, then sign in on the phone.</li>
 </ul>
 <h2>Move a model between devices</h2>
